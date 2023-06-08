@@ -6,6 +6,4 @@
 ![image](https://github.com/miblan/Palindrome/assets/29658804/ce0e6247-48be-4715-8c31-4cf60e0c9a01)
 
 # Download
-Latest demo:
-[Demo V0.1.1](https://github.com/miblan/Palindrome/blob/github/readme/Demo/Palindrome_V0.1.1.zip)
-<a href="https://github.com/miblan/Palindrome/blob/github/readme/Demo/Palindrome_V0.1.1.zip" download>Demo V0.1.1</a>
+[Demo folder](/Demo/)
