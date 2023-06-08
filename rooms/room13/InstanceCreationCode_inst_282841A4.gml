@@ -1,0 +1,9 @@
+modelname = "blocks.gmmod";
+kind = modelkind.model;
+xscale = 3;
+yscale = xscale;
+zscale = xscale;
+//hitboxsize_x = 1;
+//hitboxsize_y = 1;
+issolid = false;
+texture = tex_blocks;
