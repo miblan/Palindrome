@@ -1,7 +1,7 @@
 // Template creation code for a normal-sized table
 // It's solid, has a fitting hitbox and you can crawl under it.
 
-modelname = "laptop.gmmod";
+modelname = "models/laptop.gmmod";
 texture = tex_laptop;
 kind = modelkind.model;
 xscale = 3;

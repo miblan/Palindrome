@@ -1,7 +1,7 @@
 if(passunder)
-{ object = load_model("hitbox_pass.gmmod"); }
+{ object = load_model("models/hitbox_pass.gmmod"); }
 else
-{ object = load_model("hitbox.gmmod"); }
+{ object = load_model("models/hitbox.gmmod"); }
 
 if(passunder && Player.playerstate = state.Prone)
 { solid = false; }

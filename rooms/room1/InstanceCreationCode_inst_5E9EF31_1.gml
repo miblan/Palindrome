@@ -1,4 +1,4 @@
-modelname = "window.gmmod";
+modelname = "models/window.gmmod";
 texture = tex_window;
 kind = modelkind.model;
 xscale = 8;

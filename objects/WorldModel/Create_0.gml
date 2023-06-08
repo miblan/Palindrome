@@ -13,7 +13,7 @@ xscale = 1;
 yscale = 1;
 zscale = 1;
 
-modelname = "merry.vbuff";
+modelname = "models/merry.vbuff";
 kind = modelkind.obj
 object = -1;
 hitbox = -1;

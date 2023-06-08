@@ -1,4 +1,4 @@
-modelname = "blocks.gmmod";
+modelname = "models/blocks.gmmod";
 kind = modelkind.model;
 xscale = 3;
 yscale = xscale;
