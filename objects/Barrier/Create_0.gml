@@ -8,6 +8,6 @@ xscale = image_xscale;
 yscale = image_yscale;
 zscale = 1;
 
-object = load_model("hitbox.gmmod");
+object = load_model("models/hitbox.gmmod");
 
 passunder = false;

@@ -1,7 +1,7 @@
 // Template creation code for a normal-sized window
 // It has a texture
 
-modelname = "window.gmmod";
+modelname = "models/window.gmmod";
 kind = modelkind.model;
 xscale = 3;
 yscale = 8;
