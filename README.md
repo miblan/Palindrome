@@ -8,4 +8,4 @@
 # Download
 Latest demo:
 [Demo V0.1.1](https://github.com/miblan/Palindrome/blob/github/readme/Demo/Palindrome_V0.1.1.zip)
-<a href="https://github.com/miblan/Palindrome/blob/github/readme/Demo/Palindrome_V0.1.1.zip)" download>Demo V0.1.1</a>
+<a href="https://github.com/miblan/Palindrome/blob/github/readme/Demo/Palindrome_V0.1.1.zip" download>Demo V0.1.1</a>
