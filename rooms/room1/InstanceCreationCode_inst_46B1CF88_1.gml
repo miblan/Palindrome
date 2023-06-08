@@ -1,7 +1,7 @@
 // Template creation code for a normal-sized table
 // It's solid, has a fitting hitbox and you can crawl under it.
 
-modelname = "window.gmmod";
+modelname = "models/window.gmmod";
 kind = modelkind.model;
 xscale = 3;
 yscale = 8;

@@ -1,4 +1,4 @@
-modelname = "door.gmmod";
+modelname = "models/door.gmmod";
 kind = modelkind.model;
 xscale = 8;
 yscale = xscale;

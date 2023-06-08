@@ -20,7 +20,7 @@ vertex_format = vertex_format_end();
 vbuffer = vertex_create_buffer();
 buffer_test = vertex_create_buffer();
 
-skybox = load_model("skybox.gmmod");
+skybox = load_model("models/skybox.gmmod");
 
 instance_create_depth(x, y, depth, Player);
 

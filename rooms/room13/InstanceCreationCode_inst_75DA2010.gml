@@ -1,4 +1,4 @@
-modelname = "door.gmmod";
+modelname = "models/door.gmmod";
 texture = tex_door;
 kind = modelkind.model;
 xscale = 8;
