@@ -127,10 +127,12 @@ switch(playerstate)
 
 under_solid = false; 
 
-if(keyboard_check_pressed(ord("R")))
+// Restart game when pressing "delete"
+if(keyboard_check_pressed(vk_delete))
 { game_restart(); }
 
-if(mouse_check_button_pressed(mb_left) && !shooting)
+// Shoot when pressing left mouse
+if(mouse_check_button_pressed(mb_left) && !shooting && !reloading)
 {
 	shooting = true;
 	alarm[0] = 2;

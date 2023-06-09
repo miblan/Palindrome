@@ -45,10 +45,14 @@ else
 {
 	// Draw crosshair
 	draw_point(room_width/2, room_height/2);
-	draw_circle(room_width/2 + lerp(0 + recoil_x, window_mouse_get_x() - window_get_width() / 2, .1), room_height/2 + lerp(0 - recoil_y, window_mouse_get_y() - window_get_height() / 2, .1), 8, 1);
+	draw_circle(room_width/2 + lerp(recoil_x, window_mouse_get_x() - window_get_width() / 2, .1), room_height/2 + lerp(-recoil_y, window_mouse_get_y() - window_get_height() / 2, .1), 8, 1);
 }
 
 
 
 // Draw equipped weapon
-draw_sprite_ext(spr_gui_pistol, 0, room_width + lerp(0, window_mouse_get_x() - window_get_width() / 2, .1), room_height + (Player.headbob * 3), 3, 3, 0, c_dkgray, 1);
+var shot = 0;
+if(Player.shooting)
+{ shot = 1; }
+
+draw_sprite_ext(spr_gui_pistol, shot, room_width + lerp(recoil_x, window_mouse_get_x() - window_get_width() / 2, .1), clamp(recoil_y + room_height + (Player.headbob * 3), room_height, room_height + 50), 3, 3, 0, c_dkgray, 1);

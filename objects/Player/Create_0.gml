@@ -17,6 +17,7 @@ interact_distance = 32;
 under_solid = false;
 
 shooting = false;
+reloading = false;
 
 enum state {
 	Idle,

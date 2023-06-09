@@ -2,7 +2,7 @@ if(Player.shooting)
 {
 	lightrange = 100;
 	randomize();
-	recoil_x = irandom_range(-4, 4);
+	recoil_x += irandom_range(-4, 4);
 	recoil_y = irandom_range(16,48);
 }
 else
