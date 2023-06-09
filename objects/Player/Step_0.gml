@@ -13,11 +13,11 @@ if(window_has_focus())
 	{ window_set_cursor(cr_default); }
 	
 	// Interaction with BackPack
-    if (!backpack && Camera.interact && mouse_check_button_pressed(mb_right) && (playerstate = state.Crouch || playerstate = state.Prone))
+    if (!GameController.hasbackpack && Camera.interact && mouse_check_button_pressed(mb_right) && (playerstate = state.Crouch || playerstate = state.Prone))
 	{
 		instance_destroy(BackPack);
 		Camera.interact = false;
-		backpack = true;
+		GameController.hasbackpack = true;
 	}
 }
 
@@ -49,33 +49,34 @@ if (keyboard_check_pressed(ord("C")) && !under_solid)
 
 // Basic movement
 if (keyboard_check(ord("Q"))) {
-    x -= dsin(look_dir) * move_speed;
-    y -= dcos(look_dir) * move_speed;
+	
+	move_and_collide(-dsin(look_dir) * move_speed, -dcos(look_dir) * move_speed, BaseCollision);
 	
 	if(playerstate = state.Idle)
 	{ playerstate = state.Walk; }
 }
 if (keyboard_check(ord("D"))) {
-    x += dsin(look_dir) * move_speed;
-    y += dcos(look_dir) * move_speed;
+	
+	move_and_collide( dsin(look_dir) * move_speed, dcos(look_dir) * move_speed, BaseCollision);
 	
 	if(playerstate = state.Idle)
 	{ playerstate = state.Walk; }
 }
 if (keyboard_check(ord("Z"))) {
-    x += dcos(look_dir) * move_speed;
-    y -= dsin(look_dir) * move_speed;
+	
+	move_and_collide(dcos(look_dir) * move_speed, -dsin(look_dir) * move_speed, BaseCollision);
 	
 	if(playerstate = state.Idle)
 	{ playerstate = state.Walk; }
 }
 if (keyboard_check(ord("S"))) {
-    x -= dcos(look_dir) * move_speed;
-    y += dsin(look_dir) * move_speed;
+	
+	move_and_collide(-dcos(look_dir) * move_speed, dsin(look_dir) * move_speed, BaseCollision);
 	
 	if(playerstate = state.Idle)
 	{ playerstate = state.Walk; }
 }
+
 if (!keyboard_check(ord("Q")) && !keyboard_check(ord("D")) && !keyboard_check(ord("Z")) && !keyboard_check(ord("S")))
 {
 	if (playerstate != state.Crouch && playerstate != state.Prone)
@@ -83,12 +84,12 @@ if (!keyboard_check(ord("Q")) && !keyboard_check(ord("D")) && !keyboard_check(or
 }
 
 // Backpack
-if (keyboard_check_pressed(ord("B")) && backpack)
+if (keyboard_check_pressed(ord("B")) && GameController.hasbackpack)
 {
 	var bp = instance_create_depth(x, y, 0, BackPack);
 	bp.image_xscale = 3;
 	bp.image_yscale = 3;
-	backpack = false;
+	GameController.hasbackpack = false;
 }
 
 // State machine
@@ -134,3 +135,20 @@ if(mouse_check_button_pressed(mb_left) && !shooting)
 	shooting = true;
 	alarm[0] = 2;
 }
+
+// Put the lookdir between the boundaries of 360°
+while(look_dir >= 360)
+{ look_dir -= 360; }
+
+while(look_dir < 0)
+{look_dir += 360; }
+
+// Creating an interaction point
+var x_offset = lengthdir_x(interact_distance, look_dir);
+var y_offset = lengthdir_y(interact_distance, look_dir);
+var z_offset = -lengthdir_z(interact_distance, look_pitch);
+
+interactpoint = [x + x_offset, y + y_offset, z + z_offset];
+
+// Not stuck in walls
+move_outside_solid(look_dir-180, 1);

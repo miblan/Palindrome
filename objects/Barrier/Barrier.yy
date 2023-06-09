@@ -12,7 +12,10 @@
     "name": "Map",
     "path": "folders/Objects/Map.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "BaseCollision",
+    "path": "objects/BaseCollision/BaseCollision.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
