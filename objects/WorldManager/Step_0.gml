@@ -4,7 +4,36 @@ vertex_begin(Camera.buffer_test, Camera.vertex_format);
 for(var i = 0; i < instance_number(Solid); i++)
 {
 	var wall = instance_find(Solid, i);
-	//if(point_distance(wall.x, wall.y, Player.x, Player.y) <= 300 || point_distance(wall.x + (16*wall.image_xscale), wall.y + (16*wall.image_yscale), Player.x, Player.y) <= 300)
+	//if(!point_direction(Player.x, Player.y, wall.x + wall.image_xscale/2, wall.y) > Player.look_dir + 90 && !point_direction(Player.x, Player.y, wall.x + wall.image_xscale/2, wall.y) < Player.look_dir + 270 )
+	{
+		if (wall.image_xscale > wall.image_yscale || (wall.image_xscale == wall.image_yscale && wall.xlong))
+		{	
+			vertex_add_point(Camera.buffer_test, wall.x, wall.y, wall.z, 0, 0, 1, 0, 0, wall.clr, 1);
+			vertex_add_point(Camera.buffer_test, wall.x, wall.y, wall.hgt, 0, 0, 1, 0, 0, wall.clr, 1);
+			vertex_add_point(Camera.buffer_test, (16 * wall.image_xscale) + wall.x, wall.y, wall.z, 0, 0, 1, 0, 0, wall.clr, 1);
+
+			vertex_add_point(Camera.buffer_test, (16 * wall.image_xscale) + wall.x, wall.y, wall.hgt, 0, 0, 1, 0, 0, wall.clr, 1);
+			vertex_add_point(Camera.buffer_test, wall.x, wall.y, wall.hgt, 0, 0, 1, 0, 0, wall.clr, 1);
+			vertex_add_point(Camera.buffer_test, (16 * wall.image_xscale) + wall.x, wall.y, wall.z, 0, 0, 1, 0, 0, wall.clr, 1);
+		}
+		else
+		{
+			vertex_add_point(Camera.buffer_test, wall.x, wall.y, wall.z, 0, 0, 1, 0, 0, wall.clr, 1);
+			vertex_add_point(Camera.buffer_test, wall.x, wall.y, wall.hgt, 0, 0, 1, 0, 0, wall.clr, 1);
+			vertex_add_point(Camera.buffer_test, wall.x, (16 * wall.image_yscale) + wall.y, wall.z, 0, 0, 1, 0, 0, wall.clr, 1);
+		
+			vertex_add_point(Camera.buffer_test, wall.x, (16 * wall.image_yscale) + wall.y, wall.hgt, 0, 0, 1, 0, 0, wall.clr, 1);
+			vertex_add_point(Camera.buffer_test, wall.x, wall.y, wall.hgt, 0, 0, 1, 0, 0, wall.clr, 1);
+			vertex_add_point(Camera.buffer_test, wall.x, (16 * wall.image_yscale) + wall.y, wall.z, 0, 0, 1, 0, 0, wall.clr, 1);
+		}
+	}
+}
+
+// Create all facades
+for(var i = 0; i < instance_number(Facade); i++)
+{
+	var wall = instance_find(Facade, i);
+	//if(!point_direction(Player.x, Player.y, wall.x + wall.image_xscale/2, wall.y) > Player.look_dir + 90 && !point_direction(Player.x, Player.y, wall.x + wall.image_xscale/2, wall.y) < Player.look_dir + 270 )
 	{
 		if (wall.image_xscale > wall.image_yscale || (wall.image_xscale == wall.image_yscale && wall.xlong))
 		{	

@@ -79,6 +79,11 @@ if (keyboard_check(vk_tab))
 		vertex_submit(model.object, pr_trianglelist, -1);
 		matrix_set(matrix_world, matrix_build_identity());
 	}
+	
+	var interact_box = instance_find(Barrier, i);
+	matrix_set(matrix_world, matrix_build(Player.interactpoint[0], Player.interactpoint[1], Player.interactpoint[2], 0, 0, Player.look_dir, .01, .01, .01));
+	vertex_submit(load_model("models/skybox.gmmod"), pr_trianglelist, -1);
+	matrix_set(matrix_world, matrix_build_identity());
 }
 else
 {

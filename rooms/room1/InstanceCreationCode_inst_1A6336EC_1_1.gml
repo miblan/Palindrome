@@ -6,7 +6,7 @@ kind = modelkind.model;
 xscale = 3;
 yscale = xscale;
 zscale = xscale;
-hitboxsize_x = .75;
-hitboxsize_y = .5;
+hitboxsize_x = 1;
+hitboxsize_y = .75;
 
 passunder = true;

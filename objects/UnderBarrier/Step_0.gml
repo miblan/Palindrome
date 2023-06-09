@@ -12,5 +12,5 @@ zrot = image_angle;
 image_xscale = xscale;
 image_yscale = yscale;
 
-if(Player.playerstate == state.Prone && passunder)
-{ instance_change(UnderBarrier, 0); }
+if(Player.playerstate != state.Prone)
+{ instance_change(Barrier, 0); }

@@ -27,14 +27,15 @@ switch(Player.playerstate)
 // Log
 if (keyboard_check(vk_tab))
 {
+	draw_point(room_width/2, room_height/2);
 	draw_text(0, 0, $"Player is {stateText}. X: {Player.x} Y: {Player.y} Z: {Player.z}");
 	draw_text(0, 15, $"Visible solid [SOLID]: {instance_number(Solid)}");
 	draw_text(0, 30, $"Invisible solid [BARRIER]: {instance_number(Barrier)}");
 	draw_text(0, 45, $"Roofs: {instance_number(Roof)}");
-	draw_text(0, 60, $"Backpack: {Player.backpack}");
+	draw_text(0, 60, $"Backpack: {GameController.hasbackpack}");
 	draw_text(0, 75, $"Interact: {interact}");
 	draw_text(0, 90, $"FPS: {string(round(fps_real))}");
-	draw_text(0, 105, $" {}");
+	draw_text(0, 105, $"Look direction {Player.look_dir} | Look pitch {Player.look_pitch} | Interact point {Player.interactpoint[0]} | {Player.interactpoint[1]} | {Player.interactpoint[2]}");
 	
 }
 

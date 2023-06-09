@@ -1,19 +1,19 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "Solid",
+  "name": "Item",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Map",
-    "path": "folders/Objects/Map.yy",
+    "name": "Items",
+    "path": "folders/Objects/Items.yy",
   },
   "parentObjectId": {
-    "name": "BaseCollision",
-    "path": "objects/BaseCollision/BaseCollision.yy",
+    "name": "BaseObject",
+    "path": "objects/BaseObject/BaseObject.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -31,9 +31,9 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_wall",
-    "path": "sprites/spr_wall/spr_wall.yy",
+    "name": "spr_backpack",
+    "path": "sprites/spr_backpack/spr_backpack.yy",
   },
   "spriteMaskId": null,
-  "visible": false,
+  "visible": true,
 }
