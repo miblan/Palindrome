@@ -7,6 +7,9 @@ gpu_set_zwriteenable(true);
 interact = false;
 lightrange = 0;
 
+recoil_x = 0;
+recoil_y = 0;
+
 #region vertex format setup
 // Vertex format: data must go into vertex buffers in the order defined by this
 vertex_format_begin();
